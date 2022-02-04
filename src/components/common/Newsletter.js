@@ -3,7 +3,6 @@ import emailjs, { init } from '@emailjs/browser'
 import Error from './Error'
 
 
-
 function Newsletter() {
 
   const [formData, setFormData] = React.useState('')

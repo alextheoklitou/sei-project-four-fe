@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/static/css/main.af74205d.css",
+    "main.js": "/static/js/main.355da48f.js",
+    "static/media/loading.gif": "/static/media/loading.0207d1e817b2e1e5c2ed.gif",
+    "static/media/Rehome-Background.png": "/static/media/Rehome-Background.c5196104ef2d8526c437.png",
+    "static/media/baby.png": "/static/media/baby.1397e82ed7d84b449b86.png",
+    "static/media/PawHub.png": "/static/media/PawHub.d0f286adb1b0d942f39a.png",
+    "static/media/dog-paw.png": "/static/media/dog-paw.9b05744a85a7032c604f.png",
+    "static/media/user-background.png": "/static/media/user-background.06f7deb36520bf300bd5.png",
+    "static/media/cat.png": "/static/media/cat.c374468b26c2461ff54b.png",
+    "static/media/twopawbanner.png": "/static/media/twopawbanner.e0d25492781e7326c441.png",
+    "static/media/empty-heart.png": "/static/media/empty-heart.76c250e5cee7efefb00a.png",
+    "static/media/boneIcon.png": "/static/media/boneIcon.ad86a40040be210c585d.png",
+    "static/media/show-background.png": "/static/media/show-background.009bc9037d4680e3c3f6.png",
+    "static/media/dog-figure.png": "/static/media/dog-figure.fa0861fb6b3547d070ef.png",
+    "static/media/dog-pushing.png": "/static/media/dog-pushing.8c6d376d868edf272bd1.png",
+    "static/media/full-heart.png": "/static/media/full-heart.cc7313a8e43d93ad0396.png",
+    "index.html": "/index.html",
+    "main.af74205d.css.map": "/static/css/main.af74205d.css.map",
+    "main.355da48f.js.map": "/static/js/main.355da48f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.af74205d.css",
+    "static/js/main.355da48f.js"
+  ]
+}
