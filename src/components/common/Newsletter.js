@@ -30,7 +30,6 @@ function Newsletter() {
         'template_wv1hvjh',
         formData)
       setFormData('')
-      console.log('success')
       setIsSent(true)
     } catch (err) {
       setError(err.status.toString())
@@ -39,7 +38,6 @@ function Newsletter() {
   }
 
 
-  console.log(formData)
 
 
   return (

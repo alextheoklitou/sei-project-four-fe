@@ -49,8 +49,6 @@ function Register() {
     }
   }
 
-  console.log(loginData)
-
   return (
     <div className="container h-full min-w-full bg-donationTile bg-repeat-round">
       <div className="register-background h-96 bg-center">
