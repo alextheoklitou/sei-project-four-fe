@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://allfont.net/allfont.css?fonts=gooddog-plain');
+@import url(Access-Control-Allow-Origin:'https://allfont.net/allfont.css?fonts=gooddog-plain');
 @import url('//db.onlinewebfonts.com/c/aee15e4c7f9dcdc9544851df8640213f?family=Kessel205W00-Heavy');
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&family=Signika:wght@300&display=swap');
 
