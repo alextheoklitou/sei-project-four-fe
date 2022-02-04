@@ -2,11 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-/* @import url('https://db.onlinewebfonts.com/c/5f6a1d84be9da8671205d7505c9fad01?family=GoodDog'); */
+@import url('https://allfont.net/allfont.css?fonts=gooddog');
 @import url('https://db.onlinewebfonts.com/c/aee15e4c7f9dcdc9544851df8640213f?family=Kessel205W00-Heavy');
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&family=Signika:wght@300&display=swap');
 
-@font-face {font-family: "GoodDog"; src: url("//db.onlinewebfonts.com/t/5f6a1d84be9da8671205d7505c9fad01.eot"); src: url("//db.onlinewebfonts.com/t/5f6a1d84be9da8671205d7505c9fad01.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/5f6a1d84be9da8671205d7505c9fad01.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/5f6a1d84be9da8671205d7505c9fad01.woff") format("woff"), url("//db.onlinewebfonts.com/t/5f6a1d84be9da8671205d7505c9fad01.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/5f6a1d84be9da8671205d7505c9fad01.svg#GoodDog") format("svg"); }
 
 * {
   margin:0;
