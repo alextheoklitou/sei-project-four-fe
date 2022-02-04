@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url(Access-Control-Allow-Origin:'https://allfont.net/allfont.css?fonts=gooddog-plain');
+@import url('//db.onlinewebfonts.com/c/5f6a1d84be9da8671205d7505c9fad01?family=GoodDog');
 @import url('//db.onlinewebfonts.com/c/aee15e4c7f9dcdc9544851df8640213f?family=Kessel205W00-Heavy');
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&family=Signika:wght@300&display=swap');
 
@@ -43,7 +43,7 @@ nav {
 /* FONTS */
 
 .gooddog-font {
-  font-family: 'GoodDog Plain', arial;
+  font-family: 'GoodDog', arial;
 }
 
 .kessel-font {
