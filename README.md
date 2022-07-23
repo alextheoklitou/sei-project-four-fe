@@ -40,3 +40,116 @@ After some discussion of things we have in common, it was quite obvious that we 
 
 We started by creating an ERD diagram to plan the back-end models and establish the relationships between them. We wanted to push ourselves and our SQL database abilities by creating many-to-many relationships:
 ![Screen Grab of ERD diagram](./src/assets/ERD.png)
+
+We then created a virtual whiteboard using Miro which enabled us to share notes, create to-do lists and plan our days as a group:
+![Screen Grab of Miro](./src/assets/miro.png)
+### Work Split
+As we were a group of 4 for the first time, it was important to us for the work to be split evenly across both back-end and front-end. During the project we worked while on a Zoom call and shared code snippets on Slack in order to work as collaboratively as possible
+## Back-End
+When it came to the back-end we were aiming to get it done as soon as possible so we could crack on with the front-end and make our project as aesthetically pleasing as possible. We took turns coding while sharing our screen and this allowed each of us to code review as we went along. As using Django on a project was new to all of us it was critical to have the eyes and support of our teammates at this stage. Once each person was done, we would merge our branch and push it into the development branch for the next person to pull the most up to date code.
+
+We created two apps, one for the dogs and one for user authorisations. We were able to use generics built into Django for a lot of this which enabled us to work quickly to finish the back-end. We used some custom code for the user login:
+```py
+class UserLoginView(APIView):
+   ''' View for Users Login /login POST'''
+ 
+   def post(self, request):
+       username = request.data.get('username')
+       password = request.data.get('password')
+ 
+       try:
+           user_to_login = User.objects.get(username=username)
+       except User.DoesNotExist:
+           raise PermissionDenied({'detail':'Unauthorized'})
+ 
+       if not user_to_login.check_password(password):
+           raise PermissionDenied({'detail':'Unauthorized'})
+ 
+       expiry_time = datetime.now() + timedelta(days=7)
+ 
+       token = jwt.encode(
+           {'sub': user_to_login.id, 'exp': int(expiry_time.strftime('%s'))},
+           settings.SECRET_KEY,
+           algorithm='HS256'
+       )
+ 
+       return Response({
+           'token': token,
+           'message': f'Welcome back {user_to_login.username}'
+       })
+```
+For authorisation, we decided to use JWT:
+```py
+class JWTAuthentication(BasicAuthentication):
+ 
+   def authenticate(self, request):
+       header = request.headers.get('Authorization')
+ 
+       if not header:
+           return None
+ 
+       if not header.startswith('Bearer'):
+           raise PermissionDenied({'detail':'Invalid Auth Header'})
+ 
+       token = header.replace('Bearer ', '')
+ 
+       try:
+           payload = jwt.decode(token, settings.SECRET_KEY, algorithms=['HS256'])
+           user = User.objects.get(pk=payload.get('sub'))
+       except jwt.exceptions.InvalidTokenError:
+           raise PermissionDenied({'detail':'Invalid Token Error'})
+       except User.DoesNotExist:
+           raise PermissionDenied({'detail':'User Not Found'})
+ 
+       return (user, token)
+```
+The back-end component we were most proud of was the use of nested serialisers as we had a lot of relations we wanted to achieve, both one-to-may and many-to-many:
+```py
+class NestedUserSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = User
+        fields = ('id', 'username')
+
+class QuestionSerializer(serializers.ModelSerializer):
+    '''Serializer for Questions'''
+
+    class Meta:
+        model = Question
+        fields = '__all__'
+
+class NestedQuestionSerializer(serializers.ModelSerializer):
+    '''Serializer for nested Questions'''
+    owner = NestedUserSerializer()
+
+    class Meta:
+        model = Question
+        fields = '__all__'
+
+class FavoriteSerializer(serializers.ModelSerializer):
+    '''Serializer for the favorites'''
+
+    class Meta:
+        model = Favorite
+        fields = '__all__'
+
+class NestedFavoriteSerializer(serializers.ModelSerializer): 
+    '''Serializer for favorites inside other data'''
+
+    owner = NestedUserSerializer()
+
+    class Meta: 
+        model = Favorite
+        fields = '__all__'
+
+class DogSerializer(serializers.ModelSerializer):
+    '''Serializer for Dogs'''
+
+    favorited_by = NestedFavoriteSerializer(many=True, read_only=True)
+    questions = NestedQuestionSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = Dog
+        fields = '__all__'
+```
+Between the four of us, we were able to complete our entire back-end in just one day and we then proceeded to seed the data for all the dogs as well as create some dummy user data.
