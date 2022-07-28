@@ -51,7 +51,7 @@ We then created a virtual whiteboard using Miro which enabled us to share notes,
 
 ### Work Split
 As we were a group of 4 for the first time, it was important to us for the work to be split evenly across both backend and frontend. During the project we worked while on a Zoom call and shared code snippets on Slack in order to work as collaboratively as possible
-## Back-End
+## Backend
 When it came to the backend we were aiming to get it done as soon as possible so we could crack on with the frontend and make our project as aesthetically pleasing as possible. We took turns coding while sharing our screen and this allowed each of us to code review as we went along. As using Django on a project was new to all of us it was critical to have the eyes and support of our teammates at this stage. Once each person was done, we would merge our branch and push it into the development branch for the next person to pull the most up to date code.
 
 We created two apps, one for the dogs and one for user authorisations. We were able to use generics built into Django for a lot of this which enabled us to work quickly to finish the backend. We used some custom code for the user login:
