@@ -9,7 +9,7 @@ PawHub was the fourth and final project of the General Assembly Software Enginee
 * Be a complete product which most likely means multiple relationships and CRUD functionality for at least a couple of models
 * Implement thoughtful user stories/wireframes that are significant enough to help you know which features are core MVP and which you can cut
 * Have a visually impressive design
-* Be deployed online so it's publicly accessibl
+* Be deployed online so it's publicly accessible
 
 ## Collaborators
 * [Alex Chan](https://github.com/achan81)
@@ -50,7 +50,7 @@ We then created a virtual whiteboard using Miro which enabled us to share notes,
 ![Screen Grab of Miro](./src/assets/miro.png)
 
 ### Work Split
-As we were a group of 4 for the first time, it was important to us for the work to be split evenly across both backend and frontend. During the project we worked while on a Zoom call and shared code snippets on Slack in order to work as collaboratively as possible
+As we were a group of 4 for the first time, it was important to us for the work to be split evenly across both backend and frontend. During the project we worked while on a Zoom call and shared code snippets on Slack in order to work as collaboratively as possible.
 ## Backend
 When it came to the backend we were aiming to get it done as soon as possible so we could crack on with the frontend and make our project as aesthetically pleasing as possible. We took turns coding while sharing our screen and this allowed each of us to code review as we went along. As using Django on a project was new to all of us it was critical to have the eyes and support of our teammates at this stage. Once each person was done, we would merge our branch and push it into the development branch for the next person to pull the most up to date code.
 
