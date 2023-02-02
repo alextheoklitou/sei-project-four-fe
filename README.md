@@ -30,7 +30,6 @@ PawHub was the fourth and final project of the General Assembly Software Enginee
 * Canva
 
 ## Deployed Version
-Since Heroku have stopped their free subscription the back end of the project is no longer supported unfortunately however the project can still be run on local server.
 [View the deployed version of the app](https://paw-hub.netlify.app/)
 
 ![Screen Grab of home page](./src/assets/pawHubHome.png)
